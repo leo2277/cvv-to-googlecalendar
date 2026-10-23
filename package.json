@@ -1,0 +1,30 @@
+{
+  "name": "cvv-to-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --env development",
+    "build": "vite build --config src/frontend/vite.config.ts && tsc -p src/worker/tsconfig.json --noEmit",
+    "deploy": "npm run build:frontend && wrangler deploy",
+    "build:frontend": "vite build --config src/frontend/vite.config.ts",
+    "preview": "wrangler dev"
+  },
+  "dependencies": {
+    "hono": "^4.4.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240725.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.5",
+    "wrangler": "^3.65.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
